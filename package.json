@@ -1,0 +1,36 @@
+{
+  "name": "docker-node-ts-template",
+  "version": "1.0.0",
+  "description": "Dockerised template of node, express, prisma and postgresql with typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && swc ./src -d dist",
+    "start": "node dist/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamraviteja/docker-node-ts-template.git"
+  },
+  "keywords": [
+    "Docker",
+    "Node",
+    "Typescript",
+    "Express",
+    "Prisma",
+    "PostgreSQL"
+  ],
+  "author": "Ravi Teja Darapu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamraviteja/docker-node-ts-template/issues"
+  },
+  "homepage": "https://github.com/iamraviteja/docker-node-ts-template#readme",
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.5.5",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^20.12.11",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  }
+}
