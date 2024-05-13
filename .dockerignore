@@ -1,0 +1,7 @@
+node_modules
+dist
+.vscode
+LICENSE
+README.md
+Dockerfile
+docker-compose.yml

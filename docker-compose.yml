@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      args:
+        - NODE_ENV=development
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - ./src:/usr/src/app/src
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    command: bash -c "npm run docker:start"
