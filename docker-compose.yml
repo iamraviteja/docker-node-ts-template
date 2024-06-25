@@ -1,4 +1,11 @@
 services:
+  postgresql:
+    image: postgres:15-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=webapp_db
+      - POSTGRES_HOST_AUTH_METHOD=trust
   backend:
     build:
       args:
@@ -8,8 +15,12 @@ services:
       - 3000:3000
       - 9229:9229
     volumes:
-      - ./src:/usr/src/app/src
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     environment:
       - NODE_ENV=development
       - PORT=3000
+      - DATABASE_URL=postgres://postgres@postgresql/webapp_db
     command: bash -c "npm run docker:start"
+    depends_on:
+      - postgresql

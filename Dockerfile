@@ -13,6 +13,8 @@ ENV NODE_ENV $NODE_ENV
 # Install dependencies first, as they change less often than code.
 COPY package*.json ./
 RUN npm ci && npm cache clean --force
+COPY prisma/schema.prisma ./prisma/
+RUN npx prisma generate
 COPY . .
 RUN npm run build
 

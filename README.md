@@ -1,6 +1,6 @@
 # Docker Node Template
 
-A dockerised node template using typescript, express js, and postgresql.
+A dockerised node template using typescript, express js, and postgresql. from ref https://github.com/mrwade/ultimate-node-stack
 
 Please follow the below steps to create the template from scratch.
 
@@ -127,11 +127,32 @@ For debuging with vscode create a launch.json file and give below config
 ]
 }
 
+Add postgresql service to docker
+
+Add prisma and prisma client
+
+create a seed file script for sample database addition
+
 docker refrence
 [REF] https://blog.kubesimplify.com/everything-you-need-to-know-about-docker-compose
 compose up with detach
 docker compose up --detach
-remove all closed images
+docker stop all containers
+docker stop $(docker ps -a -q)
+remove all closed containers
 docker rm -v $(docker ps --filter status=exited -q)
+remove all containers
+docker rm $(docker ps -a -q)
 remove all cache images
 docker system prune -a
+
+Node js Architecture
+https://medium.com/@binmile/an-explanatory-guide-to-node-js-architecture-and-its-best-practices-ca03c4e7e060
+https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf
+
+Node js Build
+https://www.freecodecamp.org/news/you-should-never-ever-run-directly-against-node-js-in-production-maybe-7fdfaed51ec6/
+https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/
+
+Node js Debug
+https://nodejs.org/en/learn/getting-started/debugging
